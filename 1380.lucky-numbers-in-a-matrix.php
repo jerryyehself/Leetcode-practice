@@ -15,28 +15,18 @@ class Solution
      */
     function luckyNumbers($matrix)
     {
-        $arrShift = [];
+        $luckNums = [];
         foreach ($matrix as $rowSet) {
-            // $min = array_search(min($rowSet),$rowSet).min($rowSet);
+            //取row最小
             $min = min($rowSet);
-            foreach ($rowSet as $col => $data) {
-                // $arrShift[$col] = array_column($matrix,$col);
-                if ($min == max(array_column($matrix, $col)))
-                    return [$min];
-                // echo $col;
-                // echo var_dump(array_column($matrix, $col));
 
-                // echo max(array_column($matrix, $col)) == $data;
-                // if (max(array_column($matrix, $col)) == $data) {
-                //     echo $data;
-                //     exit;
-                // }
+            //取num最大
+            foreach ($rowSet as $col => $data) {
+                if ($min == max(array_column($matrix, $col)))
+                    $luckNums[] = $min;
             }
         }
-
-
-        // echo var_dump($b);
-        // return $rowMin;
+        return $luckNums;
     }
 }
 // @lc code=end
