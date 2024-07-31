@@ -23,6 +23,8 @@ class Solution
      * e的時候才執行elseif
      * 
      * 就算子字串中有子字串也不會影響最長子字串
+     * 
+     * 相關演算法：：two pointer & siliding window
      */
     function lengthOfLongestSubstring($s)
     {
